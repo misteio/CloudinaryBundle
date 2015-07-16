@@ -12,11 +12,11 @@ MisteioCloudinaryBundle is a Symfony2 Bundle forked from laravel4-cloudinary (th
 Via Composer
 
 ``` bash
-$ composer require misteio/misteio-cloudinary-bundle
+$ composer require misteio/cloudinary-bundle
 ```
 or in composer.json file
 ``` bash
-"misteio/misteio-cloudinary-bundle": "dev-master"
+"misteio/cloudinary-bundle": "dev-master"
 ```
 
 Register the bundle in `app/AppKernel.php`:

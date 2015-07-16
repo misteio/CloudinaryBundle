@@ -1,6 +1,6 @@
 <?php
 
-namespace Misteio\MisteioCloudinaryBundle\Tests\Twig;
+namespace Misteio\CloudinaryBundle\Tests\Twig;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

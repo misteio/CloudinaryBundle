@@ -1,6 +1,6 @@
 <?php
 
-namespace Misteio\MisteioCloudinaryBundle;
+namespace Misteio\CloudinaryBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
