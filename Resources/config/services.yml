@@ -1,0 +1,10 @@
+services:
+    misteio_cloudinary_wrapper:
+        class: Misteio\MisteioCloudinaryBundle\Wrapper\CloudinaryWrapper
+        arguments: ['%misteio_cloudinary.cloud_name%', '%misteio_cloudinary.api_key%', '%misteio_cloudinary.secret_key%']
+
+    acme.twig.acme_extension:
+            class: Misteio\MisteioCloudinaryBundle\Twig\CloudinaryExtension
+            arguments: ["@misteio_cloudinary_wrapper"]
+            tags:
+                - { name: twig.extension }
