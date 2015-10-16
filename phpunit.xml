@@ -16,7 +16,9 @@
             <directory>./Tests/</directory>
         </testsuite>
     </testsuites>
-
+     <php>
+        <server name="KERNEL_DIR" value="Tests/App" />
+    </php>
     <filter>
         <whitelist>
             <directory>./</directory>
