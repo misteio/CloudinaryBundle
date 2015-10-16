@@ -12,7 +12,6 @@ class AppKernel extends Kernel
             new Misteio\CloudinaryBundle\MisteioCloudinaryBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
         );
     }
 
