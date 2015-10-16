@@ -18,6 +18,7 @@
     </testsuites>
      <php>
         <server name="KERNEL_DIR" value="Tests/Twig" />
+        <server name="KERNEL_DIR" value="Tests/Wrapper" />
     </php>
     <filter>
         <whitelist>
