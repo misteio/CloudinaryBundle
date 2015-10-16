@@ -6,3 +6,6 @@ framework:
     csrf_protection: false
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] }
+
+misteio_cloudinary:
+  cloud_name: phraseart
