@@ -1,3 +1,6 @@
+imports:
+    - { resource: parameters.php }
+
 framework:
     secret:          secret
     test: ~
