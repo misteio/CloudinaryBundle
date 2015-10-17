@@ -1,6 +1,3 @@
-imports:
-    - { resource: parameters.php }
-
 framework:
     secret:          secret
     test: ~
@@ -12,3 +9,5 @@ framework:
 
 misteio_cloudinary:
   cloud_name: phraseart
+  api_key: api
+  secret_key: secretkey
