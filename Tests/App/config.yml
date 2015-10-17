@@ -12,5 +12,5 @@ framework:
 
 misteio_cloudinary:
   cloud_name: phraseart
-  api_key: xxx
-  secret_key: xxx
+  api_key: %api_key%
+  secret_key: %api_key%
