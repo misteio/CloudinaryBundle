@@ -17,3 +17,7 @@ matrix:
 
 script:
   - phpunit --coverage-text --coverage-clover=coverage.clover
+  - mkdir -p build/logs
+   
+after_script:
+ - php vendor/bin/coveralls -v
