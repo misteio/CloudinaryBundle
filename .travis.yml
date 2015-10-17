@@ -16,8 +16,9 @@ matrix:
     - php: hhvm
 
 script:
-  - phpunit --coverage-text --coverage-clover=coverage.clover
   - mkdir -p build/logs
-   
+  - phpunit --coverage-text --coverage-clover=coverage.clover
+  - phpunit --coverage-clover build/logs/clover.xml
+  
 after_script:
  - php vendor/bin/coveralls -v
