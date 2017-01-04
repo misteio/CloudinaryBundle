@@ -5,10 +5,18 @@ php:
 
 env:
   - SYMFONY_VERSION=2.7.*
+  - SYMFONY_VERSION=2.8.*
+  - SYMFONY_VERSION=3.0.*
 
 before_script:
   - travis_retry composer self-update
-  - composer require --prefer-source --dev symfony/symfony:${SYMFONY_VERSION}
+
+install:
+  - composer require symfony/framework-bundle:${SYMFONY_VERSION}
+
+addons:
+  code_climate:
+    repo_token: 4ae0e9a441e00d34b3400eb6ff19abe30d786090cb77630caf02ab086e87f9ee
 
 matrix:
   allow_failures:
@@ -19,6 +27,6 @@ script:
   - mkdir -p build/logs
   - phpunit --coverage-text --coverage-clover=coverage.clover
   - phpunit --coverage-clover build/logs/clover.xml
-  
-after_script:
- - php vendor/bin/coveralls -v
+
+after_success:
+  - vendor/bin/test-reporter

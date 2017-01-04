@@ -13,15 +13,15 @@
     ],
     "require": {
         "php": ">=5.4",
-        "symfony/framework-bundle": "2.7.*",
-        "cloudinary/cloudinary_php": "1.0.11",
+        "symfony/framework-bundle": "~2.7|~3.0",
+        "cloudinary/cloudinary_php": "1.4.2",
 		"twig/extensions": "~1.1",
-		"symfony/console": "~2.7",
-		"symfony/finder": "~2.7",
-		"satooshi/php-coveralls": "dev-master"
+		"symfony/console": "~2.7|~3.0",
+		"symfony/finder": "~2.7|~3.0"
     },
 	"require-dev": {
-		"phpunit/phpunit": "4.7.*"
+		"phpunit/phpunit": "4.7.*",
+        "codeclimate/php-test-reporter": "dev-master"
 	},
     "autoload": {
         "psr-4": {"Misteio\\CloudinaryBundle\\": ""}

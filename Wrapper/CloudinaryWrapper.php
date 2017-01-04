@@ -108,6 +108,27 @@ class CloudinaryWrapper
         $this->uploadedResult = $this->getUploader()->upload($source, $options);
         return $this;
     }
+
+    /**
+     * Upload image to cloud.
+     *
+     * @param  mixed $source
+     * @param  string $publicId
+     * @param  array  $tags
+     * @return CloudinaryWrapper
+     */
+    public function uploadVideo($source, $publicId, $tags = array())
+    {
+        $options =  array(
+            'public_id' => $publicId,
+            'tags'      => $tags,
+            'resource_type' => 'video'
+        );
+        $this->uploadedResult = $this->getUploader()->upload($source, $options);
+        return $this;
+    }
+
+
     /**
      * Uploaded result.
      *
@@ -129,7 +150,19 @@ class CloudinaryWrapper
     public function show($publicId, $options = array())
     {
         return $this->getCloudinary()->cloudinary_url($publicId, $options);
+    }
 
+    /**
+     * Display video.
+     *
+     * @param  string $publicId
+     * @param  array  $options
+     * @return string
+     */
+    public function showVideo($publicId, $options = array())
+    {
+        $options['resource_type'] = 'video';
+        return $this->getCloudinary()->cloudinary_url($publicId, $options);
     }
     /**
      * Rename public ID.
@@ -161,33 +194,32 @@ class CloudinaryWrapper
     }
 
     /**
-     * Add tag to images.
-     *
-     * @param string $tag
-     * @param array  $publicIds
-     * @param array  $options
+     * @param $tag
+     * @param array $publicIds
+     * @param array $options
+     * @return mixed
      */
     public function addTag($tag, $publicIds = array(), $options = array())
     {
         return $this->getUploader()->add_tag($tag, $publicIds, $options);
     }
+
     /**
-     * Remove tag from images.
-     *
-     * @param string $tag
-     * @param array  $publicIds
-     * @param array  $options
+     * @param $tag
+     * @param array $publicIds
+     * @param array $options
+     * @return mixed
      */
     public function removeTag($tag, $publicIds = array(), $options = array())
     {
         return $this->getUploader()->remove_tag($tag, $publicIds, $options);
     }
+
     /**
-     * Replace image's tag.
-     *
-     * @param string $tag
-     * @param array  $publicIds
-     * @param array  $options
+     * @param $tag
+     * @param array $publicIds
+     * @param array $options
+     * @return mixed
      */
     public function replaceTag($tag, $publicIds = array(), $options = array())
     {

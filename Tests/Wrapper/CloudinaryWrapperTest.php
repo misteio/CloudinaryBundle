@@ -17,6 +17,11 @@ class CloudinaryWrapperTest extends KernelTestCase
     private $_file;
 
     /**
+     * @var String
+     */
+    private $_video_url = 'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4';
+
+    /**
      * {@inheritDoc}
      */
     public function setUp()
@@ -36,6 +41,12 @@ class CloudinaryWrapperTest extends KernelTestCase
     {
         $tags   = array( 'testing', 'phpunit', 'test');
         $this->assertEquals('my_upload_unit_test', $this -> _cloudinary -> upload( $this ->_file , 'my_upload_unit_test', $tags) -> getResult()['public_id']);
+    }
+
+    public function testUploadVideo()
+    {
+        $tags   = array( 'testing', 'phpunit', 'test');
+        $this->assertEquals('my_upload_unit_test', $this -> _cloudinary -> uploadVideo( $this->_video_url, 'my_upload_unit_test', $tags) -> getResult()['public_id']);
     }
 
     public function testAddTag()
@@ -59,5 +70,4 @@ class CloudinaryWrapperTest extends KernelTestCase
     {
         $this->assertEquals('ok', $this -> _cloudinary -> destroy('my_upload_unit_test2', 'my_upload_unit_test2')['result']);
     }
-
 }

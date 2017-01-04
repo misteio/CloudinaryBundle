@@ -33,4 +33,22 @@ class CloudinaryTwigTest extends KernelTestCase
             $ext->getUrl('sample')
         );
     }
+
+    public function testGetFilters()
+    {
+        $ext = new CloudinaryExtension($this -> _cloudinary);
+        $this->assertEquals(
+            $ext->getFilters()[0]->getName(),
+            'cloudinary_url'
+        );
+    }
+
+    public function testGetName()
+    {
+        $ext = new CloudinaryExtension($this -> _cloudinary);
+        $this->assertEquals(
+            $ext->getName(),
+            'cloudinary'
+        );
+    }
 }

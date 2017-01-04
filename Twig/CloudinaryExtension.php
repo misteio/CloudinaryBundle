@@ -23,25 +23,14 @@ class CloudinaryExtension extends \Twig_Extension
         $this->cloudinary = $cloudinary;
     }
 
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getFunctions()
-    {
-        return array(
-            new \Twig_SimpleFunction('cloudinary_url', array($this, 'getUrl'))
-        );
-    }
-
-
     /**
      * {@inheritDoc}
      */
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter('cloudinary_url', array($this, 'getUrl'))
+            new \Twig_SimpleFilter('cloudinary_url'         , array($this, 'getUrl')),
+            new \Twig_SimpleFilter('cloudinary_url_video'   , array($this, 'getUrlVideo'))
         );
     }
 
@@ -58,19 +47,17 @@ class CloudinaryExtension extends \Twig_Extension
         return $this->cloudinary->show($id, $options);
     }
 
-
     /**
-     * Get the cloudinary image tag.
+     * Get the cloudinary URL.
      *
-     * @param string $id Image ID.
-     * @param array $options options for the image.
+     * @param string $id Video ID.
+     * @param array $options options for the video.
      * @return string
      */
-    public function getImageTag($id, $options = array())
+    public function getUrlVideo($id, $options = array())
     {
-        return cl_image_tag($id, $options);
+        return $this->cloudinary->showVideo($id, $options);
     }
-
 
     /**
      * {@inheritDoc}
