@@ -10,6 +10,7 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Misteio\CloudinaryBundle\MisteioCloudinaryBundle(),
+            new Symfony\Bundle\TwigBundle\TwigBundle(),
         );
     }
 

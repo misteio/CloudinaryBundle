@@ -15,6 +15,7 @@
         "php": ">=5.4",
         "symfony/framework-bundle": "~2.7|~3.0",
         "cloudinary/cloudinary_php": "1.4.2",
+        "symfony/twig-bundle": "^2.7 || ^3.0",
 		"twig/extensions": "~1.1",
 		"symfony/console": "~2.7|~3.0",
 		"symfony/finder": "~2.7|~3.0",
