@@ -1,7 +1,7 @@
 framework:
     secret:          secret
     test: ~
-    templating:      { engines: ['twig'] }
+    templating:      { engines: ['twig', 'php'] }
 
 
 misteio_cloudinary:
