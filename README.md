@@ -57,16 +57,23 @@ You can use it via Dependency Injection Component(DIC) service.
 ```
 
 
-Upload
+Upload Image
 ```php
 	$cloudinary -> upload('path/to/file', 'name', $tags)
 ```
-
-
+Upload Video
+```php
+	$cloudinary -> uploadVideo('path/to/file', 'name', $tags)
+```
 
 Display an image
 ```php
 	$cloudinary -> show('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20));
+```
+
+Display a video
+```php
+	$cloudinary -> showVideo('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20));
 ```
 
 > More document from [cloudinary.com](http://cloudinary.com/documentation/image_transformations)
@@ -93,6 +100,11 @@ Manage with tag
 ## Twig for displaying image
 ```php
 	{{ 'my_public_id'|cloudinary_url({"width" : 150, "height" : 150, "crop" : "fill", "radius" : 20}) }}
+```
+
+## Twig for displaying video
+```php
+	{{ 'my_public_id'|cloudinary_url_video({"width" : 150, "height" : 150, "crop" : "fill", "radius" : 20}) }}
 ```
 
 ## Security
