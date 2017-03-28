@@ -95,7 +95,7 @@ class CloudinaryWrapper
      * @param  array  $tags
      * @return CloudinaryWrapper
      */
-    public function upload($source, $publicId, $tags = array())
+    public function upload($source, $publicId, $tags = array(), $options = array())
     {
         $defaults = array(
             'public_id' => null,
@@ -103,7 +103,8 @@ class CloudinaryWrapper
         );
         $options = array_merge($defaults, array(
                 'public_id' => $publicId,
-                'tags'      => $tags
+                'tags'      => $tags,
+                'options'   => $options,
             ));
         $this->uploadedResult = $this->getUploader()->upload($source, $options);
         return $this;

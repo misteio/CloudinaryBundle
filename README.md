@@ -59,7 +59,7 @@ You can use it via Dependency Injection Component(DIC) service.
 
 Upload Image
 ```php
-	$cloudinary -> upload('path/to/file', 'name', $tags)
+	$cloudinary -> upload('path/to/file', 'name', $tags, $options)
 ```
 Upload Video
 ```php
