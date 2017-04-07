@@ -4,10 +4,9 @@ MisteioCloudinaryBundle
 [![Latest Unstable Version](https://poser.pugx.org/misteio/cloudinary-bundle/v/unstable)](https://packagist.org/packages/misteio/cloudinary-bundle) 
 [![License](https://poser.pugx.org/misteio/cloudinary-bundle/license)](https://packagist.org/packages/misteio/cloudinary-bundle)
 [![Build Status](https://travis-ci.org/misteio/CloudinaryBundle.svg?branch=master)](https://travis-ci.org/misteio/CloudinaryBundle)
-[![Coverage Status](https://codeclimate.com/repos/586d2bd9fa6a943e97001bc5/badges/36b972b7a31123e8d235/coverage.svg)](https://codeclimate.com/repos/586d2bd9fa6a943e97001bc5/coverage)
 [![Code Climate](https://codeclimate.com/repos/586d2bd9fa6a943e97001bc5/badges/36b972b7a31123e8d235/gpa.svg)](https://codeclimate.com/repos/586d2bd9fa6a943e97001bc5/feed)
 
-MisteioCloudinaryBundle is a Symfony2 Bundle forked from laravel4-cloudinary (thanks [Teeplus](https://github.com/teepluss/laravel4-cloudinary)) and cloudinary-bundle (thanks [Speicher210](https://github.com/Speicher210/CloudinaryBundle)). You can use it as a service, and some extends are implemented for Twig. 
+MisteioCloudinaryBundle is a Symfony2/3 Bundle forked from laravel4-cloudinary (thanks [Teeplus](https://github.com/teepluss/laravel4-cloudinary)) and cloudinary-bundle (thanks [Speicher210](https://github.com/Speicher210/CloudinaryBundle)). You can use it as a service, and some extends are implemented for Twig. 
 [Cloudinary Library v1.0.11](http://cloudinary.com/documentation/php_integration).
 
 ## Install
@@ -43,7 +42,7 @@ Configure the connection to cloudinary in your `config.yml` :
 ``` yaml
 misteio_cloudinary:
   cloud_name: yourCloudRegistrationName
-  api_key: youtApiKey
+  api_key: yourApiKey
   secret_key: yourSecretApiKey
 ```
 
@@ -61,9 +60,9 @@ Upload Image
 ```php
 	$cloudinary -> upload('path/to/file', 'name', $tags, $options)
 ```
-Upload Video
+Upload Video (Latest argument is for large files)
 ```php
-	$cloudinary -> uploadVideo('path/to/file', 'name', $tags)
+	$cloudinary -> uploadVideo('path/to/file', 'name', $tags, true)
 ```
 
 Display an image
@@ -92,7 +91,7 @@ Delete file
 Manage with tag
 
 ```php
-	$cloudinary -> addTag('my_tag_1', array('my_public_id', 'my_public_id_2'));
+    $cloudinary -> addTag('my_tag_1', array('my_public_id', 'my_public_id_2'));
     $cloudinary -> removeTag('my_tag_2', array('my_public_id', 'my_public_id_2'));
     $cloudinary -> replaceTag('my_tag_3', array('my_public_id', 'public_id_2'));
 ```

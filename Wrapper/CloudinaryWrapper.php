@@ -116,16 +116,22 @@ class CloudinaryWrapper
      * @param  mixed $source
      * @param  string $publicId
      * @param  array  $tags
+     * @param  boolean  $large for large files
      * @return CloudinaryWrapper
      */
-    public function uploadVideo($source, $publicId, $tags = array())
+    public function uploadVideo($source, $publicId, $tags = array(), $large=false)
     {
         $options =  array(
             'public_id' => $publicId,
             'tags'      => $tags,
             'resource_type' => 'video'
         );
-        $this->uploadedResult = $this->getUploader()->upload($source, $options);
+        if($large){
+            $this->uploadedResult = $this->getUploader()->upload_large($source, $options);
+        }else{
+            $this->uploadedResult = $this->getUploader()->upload($source, $options);
+        }
+
         return $this;
     }
 
