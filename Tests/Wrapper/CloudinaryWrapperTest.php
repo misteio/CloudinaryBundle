@@ -19,7 +19,12 @@ class CloudinaryWrapperTest extends KernelTestCase
     /**
      * @var String
      */
-    private $_video_url = 'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4';
+    private $_video;
+
+    /**
+     * @var String
+     */
+    private $_video_large;
 
     /**
      * {@inheritDoc}
@@ -27,9 +32,10 @@ class CloudinaryWrapperTest extends KernelTestCase
     public function setUp()
     {
         self::bootKernel();
-        $this -> _cloudinary = static::$kernel -> getContainer() -> get('misteio_cloudinary_wrapper');
-        //We test with a default logo Symfony
-        $this -> _file =  static::$kernel -> locateResource('@MisteioCloudinaryBundle/Resources/public/images/apple-touch-icon.png');
+        $this -> _cloudinary    = static::$kernel -> getContainer() -> get('misteio_cloudinary_wrapper');
+        $this -> _file          = static::$kernel -> locateResource('@MisteioCloudinaryBundle/Resources/public/images/apple-touch-icon.png');
+        $this -> _video         = static::$kernel -> locateResource('@MisteioCloudinaryBundle/Resources/public/videos/html5.mp4');
+        $this -> _video_large   = static::$kernel -> locateResource('@MisteioCloudinaryBundle/Resources/public/videos/large.mp4');
     }
 
     public function testShow()
@@ -46,7 +52,13 @@ class CloudinaryWrapperTest extends KernelTestCase
     public function testUploadVideo()
     {
         $tags   = array( 'testing', 'phpunit', 'test');
-        $this->assertEquals('my_upload_unit_test', $this -> _cloudinary -> uploadVideo( $this->_video_url, 'my_upload_unit_test', $tags) -> getResult()['public_id']);
+        $this->assertEquals('my_upload_unit_test', $this -> _cloudinary -> uploadVideo( $this->_video, 'my_upload_unit_test', $tags) -> getResult()['public_id']);
+    }
+
+    public function testUploadLargeVideo()
+    {
+        $tags   = array( 'testing', 'phpunit', 'test');
+        $this->assertEquals('my_upload_unit_test', $this -> _cloudinary -> uploadVideo( $this->_video_large, 'my_upload_unit_test', $tags) -> getResult()['public_id'], true);
     }
 
     public function testAddTag()
