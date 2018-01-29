@@ -7,7 +7,7 @@ MisteioCloudinaryBundle
 [![Code Climate](https://codeclimate.com/repos/586d2bd9fa6a943e97001bc5/badges/36b972b7a31123e8d235/gpa.svg)](https://codeclimate.com/repos/586d2bd9fa6a943e97001bc5/feed)
 
 MisteioCloudinaryBundle is a Symfony2/3 Bundle forked from laravel4-cloudinary (thanks [Teeplus](https://github.com/teepluss/laravel4-cloudinary)) and cloudinary-bundle (thanks [Speicher210](https://github.com/Speicher210/CloudinaryBundle)). You can use it as a service, and some extends are implemented for Twig. 
-[Cloudinary Library v1.0.11](http://cloudinary.com/documentation/php_integration).
+[Cloudinary Library v1.7.1](http://cloudinary.com/documentation/php_integration).
 
 ## Install
 
