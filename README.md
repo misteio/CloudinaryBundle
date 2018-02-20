@@ -73,6 +73,7 @@ Display an image
 Display an image using HTTPS
 ```php
   $cloudinary -> show('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20, 'secure' => true));
+```
 
 Display a video
 ```php
