@@ -70,9 +70,18 @@ Display an image
 	$cloudinary -> show('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20));
 ```
 
+Display an image using HTTPS
+```php
+  $cloudinary -> show('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20, 'secure' => true));
+
 Display a video
 ```php
 	$cloudinary -> showVideo('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20));
+```
+
+Display a video using HTTPS
+```php
+  $cloudinary -> showVideo('public_name', array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20, 'secure' => true));
 ```
 
 > More document from [cloudinary.com](http://cloudinary.com/documentation/image_transformations)
@@ -101,9 +110,19 @@ Manage with tag
 	{{ 'my_public_id'|cloudinary_url({"width" : 150, "height" : 150, "crop" : "fill", "radius" : 20}) }}
 ```
 
+## Twig for displaying image using HTTPS
+```php
+  {{ 'my_public_id'|cloudinary_url({"width" : 150, "height" : 150, "crop" : "fill", "radius" : 20, "secure" : true}) }}
+```
+
 ## Twig for displaying video
 ```php
 	{{ 'my_public_id'|cloudinary_url_video({"width" : 150, "height" : 150, "crop" : "fill", "radius" : 20}) }}
+```
+
+## Twig for displaying video using HTTPS
+```php
+  {{ 'my_public_id'|cloudinary_url_video({"width" : 150, "height" : 150, "crop" : "fill", "radius" : 20, "secure" : true}) }}
 ```
 
 ## Security
